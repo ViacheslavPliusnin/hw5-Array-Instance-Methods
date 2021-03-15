@@ -15,17 +15,16 @@ function getAverage(...numbers) {
     const integerNumbers = numbers.filter(callbackIsInteger);
     return numbers.reduce(callbackGetAverage, 0) / integerNumbers.length;
 }
-console.log(getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('Average value of all arguments:', getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
 //Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції.
 function callbackEvenNumbers(number) {
     return number % 2 !== 0;
 }
 function filterEvenNumbers(...numbers) {
-    const evenNumbers = numbers.filter(callbackEvenNumbers);
-    return evenNumbers;
+    return numbers.filter(callbackEvenNumbers);
 }
-console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6));
+console.log('Filtered even numbers passed as arguments:', filterEvenNumbers(1, 2, 3, 4, 5, 6));
 
 //Створіть функцію countPositiveNumbers(...numbers) – яка порахує кількість чисел більших 0.
 function callbackPositiveNumbers(number) {
@@ -35,17 +34,16 @@ function countPositiveNumbers(...numbers) {
     const positiveNumbers = numbers.filter(callbackPositiveNumbers);
     return positiveNumbers.length;
 }
-console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6));
+console.log('Counts numbers greater than 0:', countPositiveNumbers(1, -2, 3, -4, -5, 6));
 
 //Створіть функцію getDividedByFive(...numbers) – яка відфільтрує усі елементи в масиві та залишить тільки ті, які діляться на ціло на 5.
 function callbackDividedByFive(number) {
     return number % 5 === 0;
 }
 function getDividedByFive(...numbers) {
-    const dividedNumbers = numbers.filter(callbackDividedByFive);
-    return dividedNumbers;
+    return numbers.filter(callbackDividedByFive);
 }
-console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log('Filtered all elements in the array and leaves only those that are divisible by 5:', getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
 
 // Створіть функцію replaceBadWords(string) – яка 1) розіб'є фразу на слова, 2) замінить погані слова на зірочки (*).
 function callbackBadWords(word) {
@@ -56,7 +54,7 @@ function replaceBadWords(string = "Are you fucking kidding? Holy shit! It's bull
     const words = string.split(' ');
     return words.map(callbackBadWords).join(' ');
 }
-console.log(replaceBadWords())
+console.log('Filtered obscene speech:', replaceBadWords())
 
 //Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні склади по 3 букви.
 function divideByThree(word = "Commander") {
@@ -67,4 +65,4 @@ function divideByThree(word = "Commander") {
     }
     return wordDivideByThree;
 }
-console.log(divideByThree());
+console.log('Divided each word into conditional syllables of 3 letters:', divideByThree());
